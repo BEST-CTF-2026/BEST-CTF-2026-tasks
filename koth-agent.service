@@ -3,7 +3,7 @@ Description=KoTH status agent
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /opt/king_agent.py
+ExecStart=/usr/bin/python3 /opt/koth-agent/koth-agent.py
 Restart=always
 RestartSec=2
 User=root
