@@ -1,0 +1,12 @@
+[Unit]
+Description=VPN Config Site
+After=network.target openvpn-server@server.service
+
+[Service]
+ExecStart=/usr/bin/python3 -m uvicorn main:app --host 0.0.0.0 --port 8001
+WorkingDirectory=/opt/vpn-site
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
