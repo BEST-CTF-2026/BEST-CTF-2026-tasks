@@ -1,0 +1,13 @@
+Description=KOTH Challenge
+After=network.target
+
+[Service]
+User=demo
+Group=demo
+WorkingDirectory=/opt/koth
+
+ExecStart=/opt/koth/venv/bin/python -m uvicorn app:app --host 0.0.0.0 --port 8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
